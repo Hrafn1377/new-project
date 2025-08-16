@@ -66,4 +66,5 @@
 
         const dailyReading = drawRunes(3);
         // Display dailyReading to the user
-
+console.log(dailyReading);
+dailyReading.forEach(rune => console.log(`Rune: ${rune.rune.name}, Meaning: ${rune.rune.meaning}, Upright: ${rune.rune.upright}, Reversed: ${rune.reversed ? rune.rune.reversed : "Not Reversed"}`))
