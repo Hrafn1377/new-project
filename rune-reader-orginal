@@ -1,0 +1,69 @@
+  const runes = [
+            { name: "Fehu", meaning: "Wealth, abundance", upright: "Gain, success", reversed: "Loss, disappointment" },
+            { name: "Uruz", meaning: "Strength, health", upright: "Power, endurance", reversed: "Weakness, illness" },
+            { name: "Thurisaz", meaning: "Protection, conflict", upright: "Defense, resistance", reversed: "Aggression, danger" },
+            { name: "Ansuz", meaning: "Wisdom, communication", upright: "Insight, clarity", reversed: "Miscommunication, confusion" },
+            { name: "Raido", meaning: "Journey, movement", upright: "Progress, travel", reversed: "Stagnation, delay" },
+            { name: "Kenaz", meaning: "Knowledge, creativity", upright: "Inspiration, enlightenment", reversed: "Ignorance, lack of vision" },
+            { name: "Gebo", meaning: "Gift, partnership", upright: "Generosity, balance", reversed: "Selfishness, imbalance" },
+            { name: "Wunjo", meaning: "Joy, harmony", upright: "Happiness, fulfillment", reversed: "Discontent, discord" },
+            { name: "Hagalaz", meaning: "Disruption, change", upright: "Transformation, growth", reversed: "Chaos, stagnation" },
+            { name: "Nauthiz", meaning: "Need, necessity", upright: "Survival, resilience", reversed: "Lack, hardship" },
+            { name: "Isa", meaning: "Stillness, pause", upright: "Reflection, patience", reversed: "Inaction, delay" },
+            { name: "Jera", meaning: "Harvest, cycles", upright: "Reaping rewards, natural order", reversed: "Imbalance, missed opportunities" },
+            { name: "Eihwaz", meaning: "Defense, protection", upright: "Stability, endurance", reversed: "Vulnerability, instability" },
+            { name: "Perthro", meaning: "Fate, mystery", upright: "Chance, secrets revealed", reversed: "Uncertainty, hidden truths" },
+            { name: "Algiz", meaning: "Protection, defense", upright: "Safety, guidance", reversed: "Danger, vulnerability" },
+            { name: "Sowilo", meaning: "Sun, success", upright: "Vitality, achievement", reversed: "Failure, burnout" },
+            { name: "Tiwaz", meaning: "Honor, justice", upright: "Leadership, fairness", reversed: "Injustice, tyranny" },
+            { name: "Berkano", meaning: "Growth, fertility", upright: "New beginnings, nurturing", reversed: "Stagnation, barrenness" },
+            { name: "Ehwaz", meaning: "Movement, progress", upright: "Change, partnership", reversed: "Resistance to change, isolation" },
+            { name: "Madr", meaning: "Humanity, community", upright: "Connection, cooperation", reversed: "Alienation, conflict" },
+            { name: "Lagu", meaning: "Water, flow", upright: "Emotions, intuition", reversed: "Emotional turmoil, confusion" },
+            { name: "Inguz", meaning: "Fertility, potential", upright: "New beginnings, growth", reversed: "Unrealized potential, stagnation" },
+            { name: "Dagaz", meaning: "Daylight, awakening", upright: "Clarity, enlightenment", reversed: "Darkness, ignorance" },
+            { name: "Othala", meaning: "Heritage, inheritance", upright: "Tradition, stability", reversed: "Loss of heritage, instability" },
+            { name: "Wyrd", meaning: "Fate, destiny", upright: "Karma, life path", reversed: "Detachment from fate, lack of direction" },
+            { name: "Blank Rune", meaning: "Unknown, potential", upright: "New possibilities, blank slate", reversed: "Uncertainty, lack of direction" },
+            { name: "Fehu Reversed", meaning: "Loss, disappointment", upright: "Gain, success", reversed: "Loss, disappointment" },
+            { name: "Uruz Reversed", meaning: "Weakness, illness", upright: "Power, endurance", reversed: "Weakness, illness" },
+            { name: "Thurisaz Reversed", meaning: "Aggression, danger", upright: "Defense, resistance", reversed: "Aggression, danger" },
+            { name: "Ansuz Reversed", meaning: "Miscommunication, confusion", upright: "Insight, clarity", reversed: "Miscommunication, confusion" },
+            { name: "Raido Reversed", meaning: "Stagnation, delay", upright: "Progress, travel", reversed: "Stagnation, delay" },
+            { name: "Kenaz Reversed", meaning: "Ignorance, lack of vision", upright: "Inspiration, enlightenment", reversed: "Ignorance, lack of vision" },
+            { name: "Gebo Reversed", meaning: "Selfishness, imbalance", upright: "Generosity, balance", reversed: "Selfishness, imbalance" },
+            { name: "Wunjo Reversed", meaning: "Discontent, discord", upright: "Happiness, fulfillment", reversed: "Discontent, discord" },
+            { name: "Hagalaz Reversed", meaning: "Chaos, stagnation", upright: "Transformation, growth", reversed: "Chaos, stagnation" },
+            { name: "Nauthiz Reversed", meaning: "  Lack, hardship", upright: "Survival, resilience", reversed: "Lack, hardship" },
+            { name: "Isa Reversed", meaning: "Inaction, delay", upright: "Reflection, patience", reversed: "Inaction, delay" },
+            { name: "Jera Reversed", meaning: "Imbalance, missed opportunities", upright: "Reaping rewards, natural order", reversed: "Imbalance, missed opportunities" },
+            { name: "Eihwaz Reversed", meaning: "Vulnerability, instability", upright: "Stability, endurance", reversed: "Vulnerability, instability" },
+            { name: "Perthro Reversed", meaning: "Uncertainty, hidden truths", upright: "Chance, secrets revealed", reversed: "Uncertainty, hidden truths" },
+            { name: "Algiz Reversed", meaning: "Danger, vulnerability", upright: "Safety, guidance", reversed: "Danger, vulnerability" },
+            { name: "Sowilo Reversed", meaning: "Failure, burnout", upright: "Vitality, achievement", reversed: "Failure, burnout" },
+            { name: "Tiwaz Reversed", meaning: "Injustice, tyranny", upright: "Leadership, fairness", reversed: "Injustice, tyranny" },
+            { name: "Berkano Reversed", meaning: "Stagnation, barrenness", upright: "New beginnings, nurturing", reversed: "Stagnation, barrenness" },
+            { name: "Ehwaz Reversed", meaning: "Resistance to change, isolation", upright: "Change, partnership", reversed: "Resistance to change, isolation" },
+            { name: "Madr Reversed", meaning: "Alienation, conflict", upright: "Connection, cooperation", reversed: "Alienation, conflict" },
+            { name: "Lagu Reversed", meaning: "Emotional turmoil, confusion", upright: "Emotions, intuition", reversed: "Emotional turmoil, confusion" },
+            { name: "Inguz Reversed", meaning: "Unrealized potential, stagnation", upright: "New beginnings, growth", reversed: "Unrealized potential, stagnation" },
+            { name: "Dagaz Reversed", meaning: "Darkness, ignorance", upright: "Clarity, enlightenment", reversed: "Darkness, ignorance" },
+            { name: "Othala Reversed", meaning: "Loss of heritage, instability", upright: "Tradition, stability", reversed: "Loss of heritage, instability" },
+            { name: "Wyrd Reversed", meaning: "Detachment from fate, lack of direction", upright: "Karma, life path", reversed: "Detachment from fate, lack of direction" },
+            { name: "Blank Rune Reversed", meaning: "Uncertainty, lack of direction", upright: "New possibilities, blank slate", reversed: "Uncertainty, lack of direction" },
+            // ... more runes
+        ];
+
+        function drawRunes(numRunes) {
+            const drawn = [];
+            for (let i = 0; i < numRunes; i++) {
+                const randomIndex = Math.floor(Math.random() * runes.length);
+                const isReversed = Math.random() < 0.5; // 50% chance of being reversed
+                drawn.push({ rune: runes[randomIndex], reversed: isReversed });
+            }
+            return drawn;
+        }
+
+        const dailyReading = drawRunes(3);
+        // Display dailyReading to the user
+
