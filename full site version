@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rune Reading</title>
+  <style>
+    body {
+      font-family: 'Cinzel Decorative', serif;
+      background: radial-gradient(circle at center, #1a1a1a, #000);
+      color: #f5f5f5;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #ffdf6c;
+      text-shadow: 0 0 10px #ffae00, 0 0 20px #ff6600;
+    }
+    #runeContainer {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+    .rune-card {
+      background: #222;
+      border: 2px solid #ffdf6c;
+      border-radius: 12px;
+      padding: 20px;
+      width: 200px;
+      box-shadow: 0 0 15px rgba(255, 200, 100, 0.5);
+      animation: fadeInGlow 1.5s ease forwards;
+      opacity: 0;
+    }
+    .rune-symbol {
+      font-size: 4rem;
+      margin-bottom: 15px;
+      display: block;
+      color: #ffdf6c;
+      text-shadow: 0 0 10px #ffae00, 0 0 25px #ff6600;
+    }
+    .rune-card h2 {
+      font-size: 1.5rem;
+      margin: 10px 0;
+    }
+    .rune-card p {
+      font-size: 1rem;
+      margin: 5px 0;
+    }
+    button {
+      background: #ffae00;
+      border: none;
+      padding: 12px 25px;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+      box-shadow: 0 0 15px #ff6600;
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      background: #ff6600;
+      box-shadow: 0 0 20px #ff3300, 0 0 40px #ff6600;
+      color: white;
+    }
+
+    /* Magic animation */
+    @keyframes fadeInGlow {
+      0% { opacity: 0; transform: scale(0.9); box-shadow: 0 0 0px transparent; }
+      50% { opacity: 0.5; transform: scale(1.05); box-shadow: 0 0 20px #ff6600; }
+      100% { opacity: 1; transform: scale(1); box-shadow: 0 0 15px rgba(255, 200, 100, 0.7); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Daily Rune Reading</h1>
+  <button onclick="showRunes()">🔮 Draw Runes</button>
+  <div id="runeContainer"></div>
+
+  <script>
+    const runes = [
+      { symbol: "ᚠ", name: "Fehu", meaning: "Wealth, abundance", upright: "Gain, success", reversed: "Loss, disappointment" },
+      { symbol: "ᚢ", name: "Uruz", meaning: "Strength, health", upright: "Power, endurance", reversed: "Weakness, illness" },
+      { symbol: "ᚦ", name: "Thurisaz", meaning: "Protection, conflict", upright: "Defense, resistance", reversed: "Aggression, danger" },
+      { symbol: "ᚨ", name: "Ansuz", meaning: "Wisdom, communication", upright: "Insight, clarity", reversed: "Confusion, miscommunication" },
+      { symbol: "ᚱ", name: "Raido", meaning: "Journey, movement", upright: "Progress, travel", reversed: "Stagnation, delay" },
+      { symbol: "ᚲ", name: "Kenaz", meaning: "Knowledge, creativity", upright: "Inspiration, enlightenment", reversed: "Ignorance, lack of vision" },
+      { symbol: "ᚷ", name: "Gebo", meaning: "Gift, partnership", upright: "Generosity, balance", reversed: "Selfishness, imbalance" },
+      { symbol: "ᚹ", name: "Wunjo", meaning: "Joy, harmony", upright: "Happiness, fulfillment", reversed: "Discord, disappointment" }
+    ];
+
+    function drawRunes(numRunes) {
+      const drawn = [];
+      for (let i = 0; i < numRunes; i++) {
+        const randomIndex = Math.floor(Math.random() * runes.length);
+        const isReversed = Math.random() < 0.5;
+        drawn.push({ rune: runes[randomIndex], reversed: isReversed });
+      }
+      return drawn;
+    }
+
+    function showRunes() {
+      const container = document.getElementById("runeContainer");
+      container.innerHTML = "";
+      const drawnRunes = drawRunes(3);
+
+      drawnRunes.forEach((runeObj, i) => {
+        const card = document.createElement("div");
+        card.className = "rune-card";
+        card.style.animationDelay = `${i * 0.5}s`; // staggered reveal
+
+        card.innerHTML = `
+          <span class="rune-symbol">${runeObj.rune.symbol}</span>
+          <h2>${runeObj.rune.name} ${runeObj.reversed ? "(Reversed)" : ""}</h2>
+          <p><strong>Meaning:</strong> ${runeObj.rune.meaning}</p>
+          <p><strong>${runeObj.reversed ? "Reversed" : "Upright"}:</strong> 
+             ${runeObj.reversed ? runeObj.rune.reversed : runeObj.rune.upright}</p>
+        `;
+        container.appendChild(card);
+      });
+    }
+  </script>
+</body>
+</html>
